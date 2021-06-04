@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+        <link href="styles/multiselect.css" rel="stylesheet"/>
+        <script src="multiselect.min.js"></script>
+        <style> 
+            /* example of setting the width for multiselect */
+            #testSelect1_multiSelect {
+                width: 200px;
+            }
+        </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form id="form" class="form" name="student">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Sheryar Ali" id="username" onkeyup="namecheck()"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control" id="ema">
+                <label for="username">Email</label>
+                <input type="email" placeholder="p180060@nu.edu.pk" id="email" onkeyup="mailcheck()"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control" id="pass">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Password" id="password" onkeyup="passcheck()"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control" id="gen">
+                <label for="gender" id="gender">Gender</label><br><br>
+                <input type="radio" id="male" name="gender" value="male" onclick="gendercheck()">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" onclick="gendercheck()">
+                <label for="female">Female</label><br>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+                
+            </div>
+            <label for="course" id="co">Course</label>
+            <div class="form-control" id="cou" onchange="coursecheck()">
+                <select id='testSelect1' name='course' multiple onclick="coursecheck()">
+                    <option value="pf">PF</option>
+                    <option value="math">Math</option>
+                    <option value="web">Web Programming</option>
+                    <option value="algo">AlgO </option>
+                    <option value="os">Operating System</option>
+                    <option value="database">Database</option>
+                    <option value="ai">A.I</option>
+                    <option value="cal">calculus 1  </option>
+                    <option value="graphic">Graphic design </option>
+                    <option value="3d">3d art design</option>
+                </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control" id="sem">
+                <label for="Semester">Semester</label>
+                <select  id="semester" onchange="semestercheck()">
+                    <option value="Semester" selected="selected" >Select Semester</option>
+                    <option value="Semester1" >Semester1</option>
+                    <option value="Semester2" >Semester2</option>
+                    <option value="Semester3" >Semester3</option>
+                    <option value="Semester4" >Semester4</option>
+                    <option value="Semester5" >Semester5</option>
+                    <option value="Semester6" >Semester6</option>
+                    <option value="Semester7" >Semester7</option>
+                    <option value="Semester8" >Semester8</option>
+                </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+           
+            <button id="sub" onclick="IntoJSON()">Submit</button>
+            <button  onclick="IntoJS()">SHOWS FroM JSON</button>
+        </form>
+    </div>
+    <script>
+        document.multiselect('#testSelect1')
+            .setCheckBoxClick("1", function(target, args) {
+                console.log("Checkbox for item with value '1' was clicked and got value ", args.checked);
+            });
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
